@@ -13,6 +13,7 @@
   --primary-text-color: #212121;
   --title-text-color: #757575;
   --accent-color: #2196f3;
+  --icon-color: #afb1b8;
   --footer-color: #2f303a;
   --footer-social-color: rgba(255, 255, 255, 0.1);
 }
@@ -21,13 +22,16 @@
 
 .list,
 .link {
-  padding: 0;
-  margin: 0;
   list-style: none;
   text-decoration: none;
 }
 
 body {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
   font-family: Roboto, sans-serif;
@@ -41,22 +45,25 @@ body {
 /* Шапка сайта */
 
 .page-header {
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid #ececec;
 }
 
 .container-header {
   display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   width: 1170px;
   height: 81px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .site-nav {
@@ -79,6 +86,7 @@ body {
 }
 
 .logo .header {
+  margin-right: 85px;
   color: var(--logo-black-color);
 }
 
@@ -86,10 +94,19 @@ body {
   color: var(--primary-white-color);
 }
 
+.adress-icon {
+  display: flex;
+  margin-right: 10px;
+  fill: currentColor;
+  align-items: center;
+}
+
 .site-nav .link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  align-items: center;
+  margin-right: 50px;
 
   color: var(--primary-text-color);
   font-style: normal;
@@ -104,8 +121,13 @@ body {
   color: var(--accent-color);
 }
 
+.adress-icon:hover {
+  fill: var(--accent-color);
+}
+
 .link-current {
   display: block;
+  margin-right: 50px;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -131,6 +153,9 @@ body {
 }
 
 .link-list {
+  display: flex;
+  align-items: center;
+
   color: var(--title-text-color);
   font-style: normal;
   font-weight: 500;
@@ -149,18 +174,21 @@ body {
 /* Футер */
 
 .footer {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 252px;
   background: var(--footer-color);
 }
 
 .footer-container {
   display: flex;
+  margin-top: 94px;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 94px;
   width: 1170px;
-  height: 193px;
-  padding-left: 20px;
-  padding-right: 20px;
   align-items: baseline;
 }
 
@@ -201,37 +229,48 @@ body {
 }
 
 .social-container {
-  margin-left: 69px;
+  display: flex;
+  margin-left: auto;
+}
+
+.social-links-footer {
+  display: block;
+  margin-top: 0px;
+  height: 44px;
+  width: 44px;
+  color: var(--primary-white-color);
+  background-color: var(--footer-social-color);
+  border-radius: 50%;
+  list-style: none;
+  text-decoration: none;
+  justify-content: start;
+}
+
+.social-icon-list:not(:first-child) {
+  margin-left: 10px;
 }
 
 .social-network {
+  display: inline-flex;
   min-width: 206px;
   height: 44px;
   list-style: none;
   text-decoration: none;
-  padding-left: 0;
   margin-top: 20px;
   margin-bottom: 0;
-  display: flex;
-  justify-content: start;
+  margin-left: 69px;
 }
 
-.social-links-footer {
-  display: flex;
-  min-width: 44px;
-  color: var(--footer-social-color);
-  list-style: none;
-  text-decoration: none;
-}
-
-.social-links-footer:not(:first-child) {
-  margin-left: 10px;
+.social-links-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .social-links-footer:hover,
 .social-links-footer:focus {
-  min-width: 44px;
-  color: var(--accent-color);
+  width: 44px;
+  background-color: var(--accent-color);
 }
 
 .subscribe-conteiner {
@@ -243,6 +282,7 @@ body {
   display: block;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 10px;
   font-weight: 700;
   line-height: 16px;
   text-align: left;
@@ -251,27 +291,10 @@ body {
   color: var(--primary-white-color);
 }
 
-.copyright {
-  display: flex;
-}
-
-.copyright-info {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 21px;
-
-  font-size: 12px;
-  line-height: 2;
-  text-align: center;
-  letter-spacing: 0.03em;
-
-  color: rgba(255, 255, 255, 0.4);
-}
-
 /* Кнопка Герой */
 
 .button.primary {
-  display: inline-block;
+  display: inline-flex;
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 10px 32px;
@@ -291,16 +314,16 @@ body {
 /* Кнопка Футер */
 
 .button.secondary {
-  display: inline-block;
+  display: inline-flex;
   margin-left: 354px;
   margin-top: 45px;
+
   border: 1px solid transparent;
   border-radius: 4px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 29px;
-  padding-right: 62px;
-  min-width: 200px;
+  padding-right: 28px;
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
@@ -311,13 +334,12 @@ body {
   line-height: 1.87;
   text-decoration: none;
   text-align: center;
+  align-items: center;
 }
-
-.iconsend {
+.icon-send {
+  margin-left: 10px;
   width: 24px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 10px;
+  height: 24px;
 }
 
 /* Главная страница Web Studio */
@@ -325,21 +347,34 @@ body {
 /* Герой */
 
 .hero {
-  display: inline-flexbox;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 200px;
-  width: 1600px;
+  max-width: 1600px;
   height: 600px;
-
   text-align: center;
-  background: rgba(47, 48, 58, 0.8);
+}
+
+.box {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url("../img/header_img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
   margin-top: 0px;
   margin-bottom: 30px;
-
+  padding-top: 200px;
   color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
@@ -349,12 +384,22 @@ body {
 
 /* Преимущества */
 
-.features {
-  display: flex;
+.features-container {
+  margin-top: 94px;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 94px;
   width: 1170px;
+}
+
+.features {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.features-item {
+  width: 270px;
   height: 271px;
   padding-left: 0px;
 
@@ -369,15 +414,26 @@ body {
   color: var(--title-text-color);
 }
 
+.features-icon-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  height: 120px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-white-color);
+}
+
+.features-icon {
+  width: 70px;
+  height: 70px;
+}
+
 .features-item:not(:first-child) {
   margin-left: 30px;
   width: 270px;
-}
-
-.features-img {
-  padding: 25px 100px;
-  background: var(--secondary-white-color);
-  border-radius: 4px;
 }
 
 .title {
@@ -401,7 +457,9 @@ body {
 }
 
 .section-title {
-  display: inline-flexbox;
+  display: flexbox;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 94;
   margin-bottom: 0;
   font-weight: 700;
@@ -463,37 +521,34 @@ body {
 /* Наша команда */
 
 .team {
+  display: block;
+
+  margin-top: 94px;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 94px;
   height: 702px;
+  padding-top: 50px;
   padding-left: 0px;
+  text-align: center;
   background: var(--secondary-white-color);
 }
 
-.section-title.header {
-  padding-top: 94px;
-}
-
-.section-team {
-  display: flex;
-
+.ourteam {
+  display: inline-flex;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
-  margin-bottom: 0;
-  width: 1170px;
-  height: 422px;
 }
 
 .team-list {
-  display: flex;
-  margin-top: 0;
-  text-align: center;
-  width: 270px;
-  height: 422px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 0;
   padding-left: 0px;
 
+  height: 422px;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
@@ -501,6 +556,7 @@ body {
   color: var(--title-text-color);
   text-decoration: none;
   list-style: none;
+  text-align: center;
   align-items: center;
   background-color: var(--primary-white-color);
   flex-direction: column;
@@ -529,14 +585,26 @@ body {
   margin-top: 0;
 }
 
+.social-icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  fill: currentColor;
+}
+
 .social-links {
-  display: flex;
+  display: inline-flex;
   margin-left: auto;
   margin-right: auto;
-
-  color: var(--title-text-color);
+  width: 44px;
+  height: 44px;
+  color: var(--icon-color);
   list-style: none;
   text-decoration: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-links:hover,
@@ -544,21 +612,30 @@ body {
   color: var(--accent-color);
 }
 
-.sociallinks-list {
-  display: flex;
+.sociallinks-item {
+  display: inline-flex;
+  margin-top: 0px;
+  margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 16px;
+  height: 44px;
+  width: 44px;
   list-style: none;
   text-decoration: none;
-  text-align: center;
+  justify-content: center;
+
+  color: var(--icon-color);
+  border-radius: 50%;
+  list-style: none;
+  text-decoration: none;
   align-items: center;
+  justify-content: center;
 }
 
-.sociallinks-item {
-  display: flex;
-  min-width: 44px;
-  text-decoration: none;
+.sociallinks-item:hover,
+.sociallinks-item:focus {
+  background-color: var(--accent-color);
+  fill: var(--primary-white-color);
 }
 
 .sociallinks-item:not(:first-child) {
@@ -589,20 +666,26 @@ body {
 }
 
 .clients-link {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   width: 170px;
   height: 90px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--title-text-color);
+  border: 1px solid var(--icon-color);
+  color: var(--icon-color);
   border-radius: 4px;
-  list-style: none;
-  text-decoration: none;
 }
 
 .clients-item:not(:first-child) {
   margin-left: 30px;
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-icon:hover {
+  fill: var(--accent-color);
 }
 
 .clients-list .clients-link:hover,
@@ -617,8 +700,7 @@ body {
 
 .section-title.invisible {
   visibility: hidden;
-  margin-left: 0;
-  margin-bottom: 0;
+  margin: 0 0;
 }
 
 .container-portfolionav {
@@ -725,7 +807,7 @@ body {
   line-height: 1.87;
   text-align: start;
 
-  color: var(--title-text-color: #757575);
+  color: var(--title-text-color);
 }
 
 .features-list {
