@@ -239,6 +239,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
+  color: var(--primary-white-color);
 }
 
 .social-network {
@@ -624,13 +625,13 @@ body {
   justify-content: center;
 }
 
-.social-links:hover,
-.social-links:focus {
+.sociallinks-item:hover,
+.sociallinks-item:focus {
   color: var(--accent-color);
 }
 
-.social-icon:hover {
-  fill: var(--primary-white-color);
+.social-links:hover {
+  color: var(--primary-white-color);
 }
 
 .sociallinks-item {
